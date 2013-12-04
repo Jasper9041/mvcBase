@@ -1,12 +1,13 @@
 <?php
-class Index extends Controller {
+class Test extends Controller {
 
     function __construct() {
         parent::__construct();
     }
     
     public function Index(){
-        $this->view->render('index/index');
+        $this->model->Index();
+        $this->view->render('test/test');
     }
 
 }

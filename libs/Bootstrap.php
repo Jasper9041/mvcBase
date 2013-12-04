@@ -5,6 +5,8 @@ class Bootsrap {
     private $_url = null;
 
     function __construct() {
+        require_once 'config/config.php';
+        require_once 'libs/Database.php';
         require_once 'libs/Controller.php';
         require_once 'libs/Model.php';
         require_once 'libs/View.php';
@@ -25,6 +27,7 @@ class Bootsrap {
                 $this->error();
             }
             $this->_controller = new $this->_url[0];
+            $this->_controller->loadModel($this->_url[0]);
             if (empty($this->_url[1])) {
                 $this->_controller->index();
             } else {

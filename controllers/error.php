@@ -9,6 +9,6 @@ class Error extends Controller {
     public function index(){
         $this->view->title = "Error";
         $this->view->message = 'An error occured!';
-        $this->view->render('error');
+        $this->view->render('error/error');
     }
 }
